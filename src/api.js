@@ -2,7 +2,7 @@ import axios from 'axios';
 import { jwtDecode } from "jwt-decode";
 
 const api = axios.create({
-  baseURL: 'https://backend-722144796089.us-central1.run.app/ws',
+  baseURL: 'https://backend-722144796089.us-central1.run.app',
   withCredentials: true
 });
 
