@@ -40,7 +40,7 @@ api.interceptors.request.use(async (config) => {
 
 export const auth = (data) => api.post('/login', data);
 export const register = (data) => api.post('/users', data);
-
+export const logout = () => api.delete('/users');
 export const getAllNotes = () => api.get('/note');
 export const getNoteById = (id) => api.get(`/note/${id}`);
 export const saveNote = (data) => api.post('/note', data);

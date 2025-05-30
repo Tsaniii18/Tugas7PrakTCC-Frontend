@@ -1,2 +1,4 @@
 runtime: nodejs20
-service: default
+service: fe-notes-115
+
+instance_class: F1

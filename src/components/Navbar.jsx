@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FaBook } from 'react-icons/fa';
 import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { logout } from '../api';
 import 'bulma/css/bulma.min.css';
 
 const Navbar = () => {
@@ -27,9 +27,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.delete('http://localhost:5000/logout', {
-        withCredentials: true
-      });
+      await logout();
       localStorage.removeItem('accessToken');
       navigate('/');
     } catch (error) {
