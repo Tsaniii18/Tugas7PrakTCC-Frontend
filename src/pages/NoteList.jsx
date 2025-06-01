@@ -46,15 +46,15 @@ const NoteList = () => {
                     <div className="buttons is-right">
                         <button onClick={() => navigate("/add")} className="button is-primary">+ Catatan Baru</button>
                     </div>
-                    <table className='table is-striped is-fullwidth'>
+                    <table className='table is-striped is-fullwidth is-hoverable'>
                         <thead>
                             <tr>
-                                <th>No.</th>
+                                <th style={{ width: '40px' }}>No.</th>
                                 <th>Judul</th>
                                 <th>Isi Pesan</th>
-                                <th>Tanggal dibuat</th>
-                                <th>Terakhir dirubah</th>
-                                <th>Aksi</th>
+                                <th style={{ width: '170px' }}>Tanggal dibuat</th>
+                                <th style={{ width: '170px' }}>Terakhir dirubah</th>
+                                <th style={{ width: '180px' }} className="has-text-centered">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -65,11 +65,11 @@ const NoteList = () => {
                                     <td>{note.isi.length > 50 ? `${note.isi.substring(0, 50)}...` : note.isi}</td>
                                     <td>{new Date(note.tanggal_dibuat).toLocaleString()}</td>
                                     <td>{new Date(note.tanggal_diupdate).toLocaleString()}</td>
-                                    <td>
-                                        <div className="buttons">
-                                            <button onClick={() => navigate(`/view/${note.id}`)} className="button is-small is-primary">Lihat</button>
-                                            <button onClick={() => navigate(`/edit/${note.id}`)} className="button is-small is-info">Edit</button>
-                                            <button onClick={() => handleDelete(note.id)} className='button is-small is-danger'>Hapus</button>
+                                    <td className="has-text-centered" style={{ whiteSpace: 'nowrap' }}>
+                                        <div className="buttons are-small is-centered">
+                                            <button onClick={() => navigate(`/view/${note.id}`)} className="button is-primary">Lihat</button>
+                                            <button onClick={() => navigate(`/edit/${note.id}`)} className="button is-info">Edit</button>
+                                            <button onClick={() => handleDelete(note.id)} className='button is-danger'>Hapus</button>
                                         </div>
                                     </td>
                                 </tr>
